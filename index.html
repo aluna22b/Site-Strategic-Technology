@@ -1,51 +1,92 @@
-<!doctype html>
-<html lang="ru">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Strategic Technology</title>
-    <link rel="stylesheet" href="style.css" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Стратегические технологии — охранно-пожарная сигнализация, видеонаблюдение, СКУД</title>
+  <meta name="description" content="Монтаж, ремонт и обслуживание охранно-пожарных сигнализаций, систем пожаротушения, видеонаблюдения и СКУД. Профессиональные решения для бизнеса.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  
+  <!-- Open Graph (для WhatsApp / Telegram / VK) -->
+  <meta property="og:title" content="Стратегические технологии" />
+  <meta property="og:description" content="Охранно-пожарные системы, видеонаблюдение, СКУД" />
+  <meta property="og:image" content="https://твой-домен/og-image.jpg" />
+  <meta property="og:type" content="website" />
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-  </head>
-  <body>
+<body>
   <header>
-    <h1>Strategic Technology</h1>
-    <p class="subtitle">Мини-сайт: учусь верстке и делаю красиво.</p>
     <nav>
-      <a href="#about">Обо мне</a>
-      <a href="#projects">Проекты</a>
+      <a href="#services">Услуги</a>
+      <a href="#about">О компании</a>
       <a href="#contacts">Контакты</a>
     </nav>
   </header>
 
   <main>
-    <section id="about">
-      <h2>Обо мне</h2>
-      <p>Я учусь делать сайты. Это мой первый проект.</p>
+    <!-- Hero — первый экран -->
+    <section class="hero">
+      <h1>Стратегические технологии</h1>
+      <p>Охранно-пожарная безопасность под ключ</p>
+      <a href="#form" class="cta">Оставить заявку</a>
     </section>
 
-    <section id="projects">
-      <h2>Проекты</h2>
-      <ul>
-        <li>Проект 1 — скоро будет</li>
-        <li>Проект 2 — тоже будет</li>
-      </ul>
+    <!-- 4 услуги компании -->
+    <section id="services">
+      <h2>Наши услуги</h2>
+      <div class="services-grid">
+        <article>
+          <h3>Охранно-пожарная сигнализация</h3>
+          <p>Монтаж, ремонт и обслуживание.</p>
+        </article>
+        <article>
+          <h3>Системы пожаротушения</h3>
+          <p>Проектирование и установка.</p>
+        </article>
+        <article>
+          <h3>Видеонаблюдение</h3>
+          <p>IP-камеры, аналитика, удалённый доступ.</p>
+        </article>
+        <article>
+          <h3>СКУД</h3>
+          <p>Системы контроля и учёта доступа.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>О компании</h2>
+      <p>Сколько лет на рынке, лицензии, опыт.</p>
     </section>
 
     <section id="contacts">
       <h2>Контакты</h2>
-      <p>
-        Email: <a href="mailto:test@example.com">test@example.com</a>
-      </p>
+      <p>Телефон: <a href="tel:+77001234567">+7 700 123-45-67</a></p>
+      <p>Email: <a href="mailto:info@example.kz">info@example.kz</a></p>
+      <p>Адрес: г. Алматы, ул. …</p>
+    </section>
+
+    <!-- Форма заявки -->
+    <section id="form">
+      <h2>Оставить заявку</h2>
+      <form action="https://formspree.io/f/ТВОЙ_ID" method="POST">
+        <input type="text" name="name" placeholder="Имя" required />
+        <input type="tel" name="phone" placeholder="Телефон" required />
+        <textarea name="message" placeholder="Что нужно сделать?"></textarea>
+        <label>
+          <input type="checkbox" required />
+          Согласен на <a href="privacy.html">обработку персональных данных</a>
+        </label>
+        <button type="submit">Отправить</button>
+      </form>
     </section>
   </main>
 
   <footer>
-    <small>© 2026</small>
+    <small>© 2026 Стратегические технологии. <a href="privacy.html">Политика конфиденциальности</a></small>
   </footer>
 
   <script src="script.js"></script>
-
 </body>
-
-</html>
