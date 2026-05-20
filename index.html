@@ -1,92 +1,469 @@
+<!doctype html>
+<html lang="ru">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Стратегические технологии — охранно-пожарная сигнализация, видеонаблюдение, СКУД</title>
-  <meta name="description" content="Монтаж, ремонт и обслуживание охранно-пожарных сигнализаций, систем пожаротушения, видеонаблюдения и СКУД. Профессиональные решения для бизнеса.">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  
-  <!-- Open Graph (для WhatsApp / Telegram / VK) -->
-  <meta property="og:title" content="Стратегические технологии" />
-  <meta property="og:description" content="Охранно-пожарные системы, видеонаблюдение, СКУД" />
-  <meta property="og:image" content="https://твой-домен/og-image.jpg" />
+  <meta name="theme-color" content="#21a99e" />
+
+  <title>Strategic Technology — охранно-пожарные системы, видеонаблюдение и СКУД в Алматы</title>
+  <meta
+    name="description"
+    content="ТОО «Strategic Technology» — монтаж и обслуживание охранно-пожарной сигнализации, систем пожаротушения, видеонаблюдения и СКУД в Алматы. На рынке с 2019 года."
+  />
+  <meta
+    name="keywords"
+    content="охранно-пожарная сигнализация Алматы, видеонаблюдение Алматы, СКУД Алматы, монтаж пожарной сигнализации, системы пожаротушения, Strategic Technology, sgtech.kz"
+  />
+
+  <!-- Open Graph: для WhatsApp, Telegram, ВК -->
+  <meta property="og:title" content="Strategic Technology — системы безопасности в Алматы" />
+  <meta
+    property="og:description"
+    content="Монтаж и обслуживание ОПС, видеонаблюдения, СКУД и систем пожаротушения. Алматы, ул. Жандосова, 55/5."
+  />
   <meta property="og:type" content="website" />
-  
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:url" content="https://sgtech.kz" />
+  <meta property="og:image" content="https://sgtech.kz/og-image.jpg" />
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+  <!-- Шрифт Onest: современный, с поддержкой кириллицы -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="style.css" />
+
+  <!-- JSON-LD: бизнес-данные для Яндекса и Google -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "ТОО «Strategic Technology»",
+      "alternateName": "Strategic Technology",
+      "image": "https://sgtech.kz/logo.svg",
+      "url": "https://sgtech.kz",
+      "telephone": ["+77017154286", "+77017244212"],
+      "email": "info@sgtech.kz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Жандосова, 55/5, 2 этаж, офис №2",
+        "addressLocality": "Алматы",
+        "addressRegion": "Ауэзовский район",
+        "postalCode": "050035",
+        "addressCountry": "KZ"
+      },
+      "foundingDate": "2019-09-23",
+      "taxID": "190940025867"
+    }
+  </script>
 </head>
 
 <body>
-  <header>
-    <nav>
-      <a href="#services">Услуги</a>
-      <a href="#about">О компании</a>
-      <a href="#contacts">Контакты</a>
-    </nav>
+  <!-- ШАПКА -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="Strategic Technology — на главную">
+        <!-- Заглушка-логотип. Замени на свой logo.svg -->
+        <svg class="logo-svg" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <text x="0" y="22" font-family="Onest, sans-serif" font-weight="700" font-size="18" fill="currentColor" letter-spacing="2">STRATEGIC</text>
+          <line x1="0" y1="28" x2="200" y2="28" stroke="#21a99e" stroke-width="2"/>
+          <text x="36" y="40" font-family="Onest, sans-serif" font-weight="400" font-size="13" fill="currentColor" letter-spacing="3">TECHNOLOGY</text>
+        </svg>
+      </a>
+
+      <nav class="main-nav" aria-label="Главное меню">
+        <a href="#services">Услуги</a>
+        <a href="#about">О компании</a>
+        <a href="#portfolio">Портфолио</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <div class="header-cta">
+        <a href="tel:+77017154286" class="phone-link">
+          <span class="phone-dot" aria-hidden="true"></span>
+          +7 701 715 42 86
+        </a>
+        <a href="#lead" class="btn btn-primary btn-sm">Заявка</a>
+      </div>
+
+      <button
+        class="mobile-toggle"
+        id="mobile-toggle"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
-  <main>
-    <!-- Hero — первый экран -->
+  <main id="top">
+    <!-- HERO -->
     <section class="hero">
-      <h1>Стратегические технологии</h1>
-      <p>Охранно-пожарная безопасность под ключ</p>
-      <a href="#form" class="cta">Оставить заявку</a>
-    </section>
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">
+            <span class="eyebrow-dash"></span>
+            Системы безопасности · Алматы · с 2019 года
+          </p>
+          <h1>
+            Защита объекта<br />
+            <span class="accent">«под ключ»</span>
+          </h1>
+          <p class="lede">
+            Проектируем, монтируем и обслуживаем охранно-пожарные системы,
+            видеонаблюдение и СКУД для бизнеса и частных объектов в Алматы.
+            Один подрядчик на все этапы — от проекта до сервиса.
+          </p>
+          <div class="hero-actions">
+            <a href="#lead" class="btn btn-primary">Получить расчёт</a>
+            <a href="#services" class="btn btn-ghost">Что мы делаем</a>
+          </div>
+        </div>
 
-    <!-- 4 услуги компании -->
-    <section id="services">
-      <h2>Наши услуги</h2>
-      <div class="services-grid">
-        <article>
-          <h3>Охранно-пожарная сигнализация</h3>
-          <p>Монтаж, ремонт и обслуживание.</p>
-        </article>
-        <article>
-          <h3>Системы пожаротушения</h3>
-          <p>Проектирование и установка.</p>
-        </article>
-        <article>
-          <h3>Видеонаблюдение</h3>
-          <p>IP-камеры, аналитика, удалённый доступ.</p>
-        </article>
-        <article>
-          <h3>СКУД</h3>
-          <p>Системы контроля и учёта доступа.</p>
-        </article>
+        <aside class="hero-stats" aria-label="Цифры о компании">
+          <div class="stat">
+            <span class="stat-num">6+</span>
+            <span class="stat-label">лет на рынке</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">4</span>
+            <span class="stat-label">направления услуг</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">24/7</span>
+            <span class="stat-label">техподдержка</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">НДС</span>
+            <span class="stat-label">официально, с ЭСФ</span>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <section id="about">
-      <h2>О компании</h2>
-      <p>Сколько лет на рынке, лицензии, опыт.</p>
+    <!-- УСЛУГИ -->
+    <section id="services" class="section services">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow"><span class="eyebrow-dash"></span>Что мы делаем</p>
+          <h2>Четыре направления, один подрядчик</h2>
+        </header>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <span class="service-num">01</span>
+            <h3>Охранно-пожарная сигнализация</h3>
+            <p>
+              Проектирование, монтаж, пуско-наладка и сервисное обслуживание систем
+              ОПС для офисов, складов, производств и торговых объектов.
+            </p>
+            <a href="#lead" class="service-link">Заказать →</a>
+          </article>
+
+          <article class="service-card">
+            <span class="service-num">02</span>
+            <h3>Системы пожаротушения</h3>
+            <p>
+              Автоматические установки пожаротушения: водяные, порошковые,
+              газовые. Расчёт по нормам, монтаж, постановка на обслуживание.
+            </p>
+            <a href="#lead" class="service-link">Заказать →</a>
+          </article>
+
+          <article class="service-card">
+            <span class="service-num">03</span>
+            <h3>Видеонаблюдение</h3>
+            <p>
+              IP- и аналоговые системы видеонаблюдения с удалённым доступом,
+              видеоаналитикой и записью на серверы или в облако.
+            </p>
+            <a href="#lead" class="service-link">Заказать →</a>
+          </article>
+
+          <article class="service-card">
+            <span class="service-num">04</span>
+            <h3>Системы контроля доступа</h3>
+            <p>
+              СКУД для офисов, складов и режимных объектов: карты, биометрия,
+              шлагбаумы, домофония, интеграция с учётом рабочего времени.
+            </p>
+            <a href="#lead" class="service-link">Заказать →</a>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section id="contacts">
-      <h2>Контакты</h2>
-      <p>Телефон: <a href="tel:+77001234567">+7 700 123-45-67</a></p>
-      <p>Email: <a href="mailto:info@example.kz">info@example.kz</a></p>
-      <p>Адрес: г. Алматы, ул. …</p>
+    <!-- О КОМПАНИИ -->
+    <section id="about" class="section about">
+      <div class="container">
+        <div class="about-grid">
+          <header class="section-head section-head--left">
+            <p class="eyebrow"><span class="eyebrow-dash"></span>Strategic Technology</p>
+            <h2>Делаем системы безопасности с 2019 года</h2>
+            <p class="lede">
+              ТОО «Strategic Technology» — казахстанская компания со специализацией
+              на инженерных системах безопасности. Работаем по Алматы и области,
+              сотрудничаем с юридическими лицами и частными заказчиками.
+            </p>
+          </header>
+
+          <ul class="features-list">
+            <li>
+              <h4>Опыт более 6 лет</h4>
+              <p>На рынке безопасности РК с сентября 2019 года.</p>
+            </li>
+            <li>
+              <h4>Полный цикл</h4>
+              <p>Проект → монтаж → пуско-наладка → сервис. Один подрядчик на все этапы.</p>
+            </li>
+            <li>
+              <h4>Сертифицированное оборудование</h4>
+              <p>Работаем с техникой, соответствующей техрегламентам Республики Казахстан.</p>
+            </li>
+            <li>
+              <h4>Плательщик НДС</h4>
+              <p>Работаем официально с юр. лицами, выдаём электронные счета-фактуры.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <!-- Форма заявки -->
-    <section id="form">
-      <h2>Оставить заявку</h2>
-      <form action="https://formspree.io/f/ТВОЙ_ID" method="POST">
-        <input type="text" name="name" placeholder="Имя" required />
-        <input type="tel" name="phone" placeholder="Телефон" required />
-        <textarea name="message" placeholder="Что нужно сделать?"></textarea>
-        <label>
-          <input type="checkbox" required />
-          Согласен на <a href="privacy.html">обработку персональных данных</a>
-        </label>
-        <button type="submit">Отправить</button>
-      </form>
+    <!-- ПОРТФОЛИО -->
+    <section id="portfolio" class="section portfolio">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow"><span class="eyebrow-dash"></span>Портфолио</p>
+          <h2>Реализованные объекты</h2>
+          <p class="section-sub">
+            Фотографии работ будут добавлены в ближайшее время.
+            Полный список реализованных объектов предоставляется по запросу.
+          </p>
+        </header>
+
+        <div class="portfolio-grid">
+          <div class="portfolio-item placeholder">
+            <span class="placeholder-tag">Скоро · Фото объекта</span>
+          </div>
+          <div class="portfolio-item placeholder">
+            <span class="placeholder-tag">Скоро · Фото объекта</span>
+          </div>
+          <div class="portfolio-item placeholder">
+            <span class="placeholder-tag">Скоро · Фото объекта</span>
+          </div>
+          <div class="portfolio-item placeholder">
+            <span class="placeholder-tag">Скоро · Фото объекта</span>
+          </div>
+          <div class="portfolio-item placeholder">
+            <span class="placeholder-tag">Скоро · Фото объекта</span>
+          </div>
+          <div class="portfolio-item placeholder">
+            <span class="placeholder-tag">Скоро · Фото объекта</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ФОРМА ЗАЯВКИ -->
+    <section id="lead" class="section lead">
+      <div class="container lead-inner">
+        <div class="lead-text">
+          <p class="eyebrow eyebrow--light"><span class="eyebrow-dash"></span>Оставить заявку</p>
+          <h2>Перезвоним в течение&nbsp;рабочего&nbsp;дня</h2>
+          <p class="lede lede--light">
+            Опишите задачу — рассчитаем стоимость и предложим решение под ваш объект.
+            Без навязчивых обзвонов.
+          </p>
+
+          <div class="lead-direct">
+            <p class="direct-title">Или свяжитесь напрямую:</p>
+            <a href="tel:+77017154286" class="direct-line">+7 701 715 42 86</a>
+            <a href="tel:+77017244212" class="direct-line">+7 701 724 42 12</a>
+            <a href="mailto:info@sgtech.kz" class="direct-line">info@sgtech.kz</a>
+          </div>
+        </div>
+
+        <!-- Подключение к Formspree: замени YOUR_FORM_ID на свой -->
+        <form
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+          class="lead-form"
+        >
+          <div class="field">
+            <label for="name">Имя</label>
+            <input type="text" id="name" name="name" required autocomplete="name" />
+          </div>
+
+          <div class="field">
+            <label for="phone">Телефон</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+7 ___ ___ __ __"
+              required
+              autocomplete="tel"
+            />
+          </div>
+
+          <div class="field">
+            <label for="service">Какая услуга интересует</label>
+            <select id="service" name="service">
+              <option>Охранно-пожарная сигнализация</option>
+              <option>Системы пожаротушения</option>
+              <option>Видеонаблюдение</option>
+              <option>СКУД (контроль доступа)</option>
+              <option>Несколько услуг / комплекс</option>
+              <option>Пока не уверен(а)</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Опишите задачу (необязательно)</label>
+            <textarea id="message" name="message" rows="3"></textarea>
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" name="consent" required />
+            <span>
+              Я согласен(на) с
+              <a href="privacy.html" target="_blank">политикой обработки персональных данных</a>
+            </span>
+          </label>
+
+          <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section id="contacts" class="section contacts">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow"><span class="eyebrow-dash"></span>Контакты</p>
+          <h2>Где нас найти</h2>
+        </header>
+
+        <div class="contacts-grid">
+          <div class="contact-card">
+            <h3>Офис</h3>
+            <p>
+              г. Алматы, Ауэзовский район<br />
+              ул. Жандосова, 55/5<br />
+              2 этаж, офис №2<br />
+              <span class="muted">Индекс: 050035</span>
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <h3>Телефоны</h3>
+            <p>
+              <a href="tel:+77017154286">+7 701 715 42 86</a><br />
+              <a href="tel:+77017244212">+7 701 724 42 12</a>
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <h3>Электронная почта</h3>
+            <p><a href="mailto:info@sgtech.kz">info@sgtech.kz</a></p>
+            <p class="muted">Отвечаем в рабочие часы</p>
+          </div>
+
+          <div class="contact-card">
+            <h3>Реквизиты</h3>
+            <p>
+              ТОО «Strategic Technology»<br />
+              БИН 190940025867<br />
+              Плательщик НДС
+            </p>
+          </div>
+        </div>
+
+        <!-- Карта 2GIS -->
+        <div class="map-wrap">
+          <iframe
+            src="https://2gis.kz/almaty/search/Жандосова%2055%2F5?m=76.892497%2C43.239223%2F16"
+            class="map-iframe"
+            loading="lazy"
+            title="Strategic Technology на карте 2GIS"
+          ></iframe>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <small>© 2026 Стратегические технологии. <a href="privacy.html">Политика конфиденциальности</a></small>
+  <!-- ФУТЕР -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <svg class="logo-svg logo-svg--footer" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <text x="0" y="22" font-family="Onest, sans-serif" font-weight="700" font-size="18" fill="currentColor" letter-spacing="2">STRATEGIC</text>
+          <line x1="0" y1="28" x2="200" y2="28" stroke="#21a99e" stroke-width="2"/>
+          <text x="36" y="40" font-family="Onest, sans-serif" font-weight="400" font-size="13" fill="currentColor" letter-spacing="3">TECHNOLOGY</text>
+        </svg>
+        <p>Системы безопасности «под ключ» в Алматы с 2019 года.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Услуги</h4>
+        <ul>
+          <li><a href="#services">Охранно-пожарная сигнализация</a></li>
+          <li><a href="#services">Системы пожаротушения</a></li>
+          <li><a href="#services">Видеонаблюдение</a></li>
+          <li><a href="#services">СКУД</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Компания</h4>
+        <ul>
+          <li><a href="#about">О компании</a></li>
+          <li><a href="#portfolio">Портфолио</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+          <li><a href="privacy.html">Политика конфиденциальности</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col--legal">
+        <h4>Реквизиты</h4>
+        <p class="legal">
+          ТОО «Strategic Technology»<br />
+          БИН 190940025867<br />
+          ИИК KZ55914002203KZ00B9Z<br />
+          ДБ АО «Сбербанк» г. Алматы<br />
+          БИК SABRKZKA · Кбе 17
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 ТОО «Strategic Technology». Все права защищены.</p>
+        <p class="footer-site"><a href="https://sgtech.kz">sgtech.kz</a></p>
+      </div>
+    </div>
   </footer>
+
+  <!-- Плавающая кнопка WhatsApp -->
+  <a
+    href="https://wa.me/77017154286?text=Здравствуйте!%20Хочу%20получить%20консультацию%20по%20услугам%20Strategic%20Technology."
+    class="whatsapp-float"
+    aria-label="Написать в WhatsApp"
+    target="_blank"
+    rel="noopener"
+  >
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
+    </svg>
+  </a>
 
   <script src="script.js"></script>
 </body>
+</html>
