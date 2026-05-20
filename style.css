@@ -1,0 +1,50 @@
+* { box-sizing: border-box; }
+
+body {
+  font-family: system-ui, Arial, sans-serif;
+  margin: 0;
+  line-height: 1.5;
+}
+
+header {
+  padding: 32px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.subtitle {
+  margin-top: 8px;
+  opacity: 0.75;
+}
+
+nav {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: inherit;
+}
+
+main {
+  padding: 20px;
+  max-width: 900px;
+}
+
+section {
+  margin: 24px 0;
+  padding: 16px;
+  border: 1px solid #eee;
+  border-radius: 14px;
+}
+
+footer {
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  opacity: 0.7;
+}
