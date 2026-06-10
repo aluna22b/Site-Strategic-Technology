@@ -306,11 +306,12 @@
       } else {
         // Финал: открываем WhatsApp с заполненной анкетой
         const text = encodeURIComponent(collectAnswers());
-        window.open(
-          "https://wa.me/" + WA_NUMBER + "?text=" + text,
-          "_blank",
-          "noopener"
-        );
+        const waUrl = "https://wa.me/" + WA_NUMBER + "?text=" + text;
+        if (WA_OFFHOURS_ENABLED && !waIsWorkTime()) {
+          waShowOffhoursModal();
+          return;
+        }
+        window.open(waUrl, "_blank", "noopener");
       }
     });
 
@@ -336,6 +337,147 @@
     });
 
     render();
+  }
+
+
+  /* ---------------------------------------------------------
+     10. Рабочие часы WhatsApp
+     Все кнопки WhatsApp работают с WORK_START до WORK_END
+     по времени Алматы. Вне этих часов показывается окно
+     с извинением и предложением оставить заявку.
+
+     Написать в нерабочее время нельзя — только окно
+     с извинением и кнопкой «Оставить заявку».
+
+     WA_OFFHOURS_ENABLED:
+       true  — проверка рабочих часов включена
+       false — выключена, WhatsApp доступен круглосуточно
+     --------------------------------------------------------- */
+  const WORK_START = 9;            // рабочие часы: с 9:00...
+  const WORK_END = 19;             // ...до 19:00 (19:00 уже закрыто)
+  const WORK_TZ = "Asia/Almaty";   // часовой пояс компании
+  const WA_OFFHOURS_ENABLED = true;
+
+  function waAlmatyNow() {
+    try {
+      const parts = new Intl.DateTimeFormat("ru-RU", {
+        timeZone: WORK_TZ,
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      }).formatToParts(new Date());
+      const num = (t) => Number(parts.find((p) => p.type === t).value);
+      return { hour: num("hour"), minute: num("minute") };
+    } catch (err) {
+      return null; // очень старый браузер — не блокируем
+    }
+  }
+
+  function waIsWorkTime() {
+    const now = waAlmatyNow();
+    if (!now) return true; // в сомнении не мешаем клиенту
+    return now.hour >= WORK_START && now.hour < WORK_END;
+  }
+
+  function waShowOffhoursModal() {
+    let overlay = document.getElementById("wa-offhours");
+
+    if (!overlay) {
+      const now = waAlmatyNow();
+      const timeStr = now
+        ? " Сейчас в Алматы " +
+          String(now.hour).padStart(2, "0") + ":" +
+          String(now.minute).padStart(2, "0") + "."
+        : "";
+      // Если на этой странице есть форма — ведём к ней, иначе на главную
+      const leadHref = document.getElementById("lead") ? "#lead" : "index.html#lead";
+
+      overlay = document.createElement("div");
+      overlay.id = "wa-offhours";
+      overlay.className = "wa-modal";
+      overlay.innerHTML =
+        '<div class="wa-modal-card" role="dialog" aria-modal="true" aria-labelledby="wa-modal-title">' +
+        '  <h3 id="wa-modal-title">Сейчас нерабочее время</h3>' +
+        "  <p>Приносим извинения — мы отвечаем в WhatsApp ежедневно " +
+        "с " + WORK_START + ":00 до " + WORK_END + ":00 по времени Алматы." + timeStr + "</p>" +
+        "  <p>Пожалуйста, напишите нам в рабочие часы — или оставьте заявку " +
+        "через форму, и мы свяжемся с вами в начале рабочего дня.</p>" +
+        '  <div class="wa-modal-actions">' +
+        '    <a class="btn btn-primary" data-wa-lead href="' + leadHref + '">Оставить заявку</a>' +
+        '    <button type="button" class="btn btn-ghost" data-wa-close>Понятно</button>' +
+        "  </div>" +
+        "</div>";
+      document.body.appendChild(overlay);
+
+      overlay.addEventListener("click", (e) => {
+        if (
+          e.target === overlay ||
+          e.target.closest("[data-wa-close]") ||
+          e.target.closest("[data-wa-lead]")
+        ) {
+          overlay.classList.remove("is-open");
+        }
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") overlay.classList.remove("is-open");
+      });
+    }
+
+    overlay.classList.add("is-open");
+  }
+
+  // Перехватываем клики по всем ссылкам WhatsApp на странице
+  document.addEventListener("click", (e) => {
+    if (!WA_OFFHOURS_ENABLED) return;
+    const link = e.target.closest('a[href*="wa.me"]');
+    if (!link || waIsWorkTime()) return;
+    e.preventDefault();
+    waShowOffhoursModal();
+  });
+
+
+  /* ---------------------------------------------------------
+     11. Счётчики [data-count]
+     Число плавно «набегает» от 0, когда лента появляется
+     на экране. data-suffix — что дописать после числа (+).
+     --------------------------------------------------------- */
+  const counters = document.querySelectorAll("[data-count]");
+
+  if (counters.length && "IntersectionObserver" in window) {
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          io.unobserve(entry.target);
+
+          const el = entry.target;
+          const target = Number(el.dataset.count);
+          const suffix = el.dataset.suffix || "";
+
+          if (reduceMotion || !Number.isFinite(target)) {
+            el.textContent = target + suffix;
+            return;
+          }
+
+          const duration = 900;
+          const start = performance.now();
+          const tick = (now) => {
+            const p = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - p, 3); // плавное замедление
+            el.textContent = Math.round(target * eased) + suffix;
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    counters.forEach((c) => io.observe(c));
   }
 
 })();

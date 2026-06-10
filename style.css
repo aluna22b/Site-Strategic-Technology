@@ -2099,178 +2099,34 @@ h1, h2 {
   background: var(--accent2);
 }
 
-/* ---------- Герой: пульт мониторинга ---------- */
+/* ---------- Герой: большое фото объекта ---------- */
 .hero-visual {
   position: relative;
 }
 
-.dash {
-  background: var(--dark);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.dash-head {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 16px;
-  background: rgba(255, 255, 255, 0.04);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.dash-win {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.18);
-}
-
-.dash-title {
-  margin-left: 8px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
-}
-
-.dash-live {
-  margin-left: auto;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: #ff5a5a;
-}
-
-.live-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #ff5a5a;
-  animation: liveBlink 1.6s ease-in-out infinite;
-}
-
-@keyframes liveBlink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.25; }
-}
-
-.dash-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  padding: 12px;
-}
-
-.cam {
-  position: relative;
-  aspect-ratio: 16 / 10;
-  border-radius: 8px;
-  overflow: hidden;
-  font-size: 0.6875rem;
-}
-
-/* «Сцены» камер — градиенты, имитирующие разные планы */
-.cam-1 { background:
-  radial-gradient(120% 90% at 80% 0%, rgba(96, 165, 250, 0.35), transparent 55%),
-  linear-gradient(160deg, #14365e 0%, #0c2342 55%, #081a33 100%); }
-.cam-2 { background:
-  radial-gradient(100% 80% at 15% 100%, rgba(255, 107, 44, 0.22), transparent 60%),
-  linear-gradient(200deg, #123154 0%, #0a2241 60%, #071830 100%); }
-.cam-3 { background:
-  radial-gradient(90% 90% at 50% 110%, rgba(96, 165, 250, 0.28), transparent 55%),
-  linear-gradient(140deg, #0f2c50 0%, #0a1f3c 100%); }
-.cam-4 { background:
-  radial-gradient(110% 70% at 100% 50%, rgba(125, 211, 252, 0.18), transparent 60%),
-  linear-gradient(180deg, #102e54 0%, #081a33 100%); }
-
-/* Сканлайны поверх «эфира» */
-.cam::before {
+/* Декоративная подложка со смещением — даёт фото глубину */
+.hero-visual::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.035) 0px,
-    rgba(255, 255, 255, 0.035) 1px,
-    transparent 1px,
-    transparent 4px
-  );
-  pointer-events: none;
+  top: 24px;
+  right: -18px;
+  bottom: -18px;
+  left: 24px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--brand-soft) 0%, var(--accent2-soft) 100%);
 }
 
-.cam-name {
-  position: absolute;
-  left: 8px;
-  top: 7px;
-  color: rgba(255, 255, 255, 0.85);
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+.photo-slot--main {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: 540px;
+  border: none;
+  box-shadow: var(--shadow-lg);
 }
 
-.cam-time {
-  position: absolute;
-  right: 8px;
-  bottom: 7px;
-  color: rgba(255, 255, 255, 0.6);
-  font-variant-numeric: tabular-nums;
-}
-
-.cam-rec {
-  position: absolute;
-  right: 8px;
-  top: 7px;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  color: rgba(255, 255, 255, 0.85);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
-.cam-rec i {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ff5a5a;
-  animation: liveBlink 1.2s ease-in-out infinite;
-}
-
-.dash-status {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 16px;
-  padding: 10px 14px 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.ds {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.ds i {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--brand-light);
-}
-
-.ds.ok i {
-  background: #3ddc97;
-}
-
-/* Плавающие чипы вокруг пульта */
+/* Чипы поверх фото */
 .chip {
   position: absolute;
   display: inline-flex;
@@ -2444,6 +2300,18 @@ h1, h2 {
     gap: 32px;
   }
 
+  .photo-slot--main {
+    aspect-ratio: 16 / 10;
+    max-height: none;
+  }
+
+  .hero-visual::before {
+    top: 14px;
+    right: -8px;
+    bottom: -8px;
+    left: 14px;
+  }
+
   .photo-slot--hero {
     aspect-ratio: 16 / 9;
   }
@@ -2467,9 +2335,256 @@ h1, h2 {
   }
 }
 
+
+/* ---------- Окно «нерабочее время» (WhatsApp) ---------- */
+.wa-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(10, 31, 58, 0.55);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s var(--ease), visibility 0.25s;
+}
+
+.wa-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.wa-modal-card {
+  width: min(460px, 100%);
+  background: var(--paper);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 28px;
+  transform: translateY(12px);
+  transition: transform 0.25s var(--ease);
+}
+
+.wa-modal.is-open .wa-modal-card {
+  transform: translateY(0);
+}
+
+.wa-modal-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.wa-modal-card p {
+  font-size: 0.9375rem;
+  color: var(--ink-2);
+  margin: 0 0 10px;
+}
+
+.wa-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .live-dot,
-  .cam-rec i {
-    animation: none;
+  .wa-modal,
+  .wa-modal-card {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   V4 — ДЕТАЛИ ПО РЕФЕРЕНСАМ
+   Плашки-лейблы секций, иконки услуг, тёмная лента-одометр,
+   коллаж «О компании», стрелки-кружки, фигурное фото героя
+   ========================================================= */
+
+/* ---------- Лейблы секций: заливные плашки ---------- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  background: var(--brand);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.eyebrow .eyebrow-dash {
+  display: none;
+}
+
+.eyebrow--light {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+
+/* ---------- Иконки карточек услуг ---------- */
+.service-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--brand-soft);
+  color: var(--brand-dark);
+  margin-bottom: 18px;
+}
+
+/* ---------- Тёмная лента-одометр ---------- */
+.stats-band {
+  background: var(--dark);
+  border-top: none;
+  border-bottom: none;
+}
+
+.stats-band-inner {
+  grid-template-columns: 1.7fr 1fr 1fr 1fr;
+}
+
+.sb + .sb {
+  border-left-color: rgba(255, 255, 255, 0.1);
+}
+
+.sb b {
+  color: #fff;
+}
+
+.sb span,
+.sb-label {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.875rem;
+}
+
+.sb--meter {
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.meter {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.meter b {
+  display: grid;
+  place-items: center;
+  min-width: 30px;
+  height: 38px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--brand-light);
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Коллаж в «О компании» ---------- */
+.about-collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-content: start;
+}
+
+.about-collage .photo-slot:first-child {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 10;
+}
+
+.photo-slot--square {
+  aspect-ratio: 1 / 1;
+}
+
+.collage-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  background: var(--brand);
+  color: #fff;
+}
+
+.collage-tile b {
+  font-size: 1.625rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.collage-tile span {
+  font-size: 0.875rem;
+  opacity: 0.85;
+  line-height: 1.45;
+}
+
+/* ---------- Ссылки со стрелкой в кружке ---------- */
+.service-link,
+.solution-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.service-link::after,
+.solution-more::after {
+  content: "→";
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  font-size: 0.8125rem;
+  transition: transform 0.2s var(--ease);
+}
+
+.service-card:hover .service-link::after,
+.solution-card:hover .solution-more::after {
+  transform: translateX(4px);
+}
+
+/* ---------- Фигурное фото героя ---------- */
+.photo-slot--main {
+  border-radius: 24px 96px 24px 24px;
+}
+
+/* ---------- Адаптив V4 ---------- */
+@media (max-width: 1024px) {
+  .stats-band-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sb--meter {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+
+  .sb {
+    border-top-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .about-collage {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 720px) {
+  .photo-slot--main {
+    border-radius: 18px 56px 18px 18px;
+  }
+
+  .meter b {
+    min-width: 26px;
+    height: 32px;
+    font-size: 1.05rem;
   }
 }
