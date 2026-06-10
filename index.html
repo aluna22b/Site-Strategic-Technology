@@ -4,78 +4,42 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#21a99e" />
-
   <title>Strategic Technology — охранно-пожарные системы, видеонаблюдение и СКУД в Алматы</title>
-  <meta
-    name="description"
-    content="ТОО «Strategic Technology» — монтаж и обслуживание охранно-пожарной сигнализации, систем пожаротушения, видеонаблюдения и СКУД в Алматы. На рынке с 2019 года."
-  />
-  <meta
-    name="keywords"
-    content="охранно-пожарная сигнализация Алматы, видеонаблюдение Алматы, СКУД Алматы, монтаж пожарной сигнализации, системы пожаротушения, Strategic Technology, sgtech.kz"
-  />
-
-  <!-- Open Graph: для WhatsApp, Telegram, ВК -->
-  <meta property="og:title" content="Strategic Technology — системы безопасности в Алматы" />
-  <meta
-    property="og:description"
-    content="Монтаж и обслуживание ОПС, видеонаблюдения, СКУД и систем пожаротушения. Алматы, ул. Жандосова, 55/5."
-  />
+  <meta name="description" content="ТОО «Strategic Technology» — монтаж и обслуживание охранно-пожарной сигнализации, систем пожаротушения, видеонаблюдения и СКУД в Алматы. Расчёт стоимости онлайн." />
+  <meta property="og:title" content="Strategic Technology — охранно-пожарные системы, видеонаблюдение и СКУД в Алматы" />
+  <meta property="og:description" content="ТОО «Strategic Technology» — монтаж и обслуживание охранно-пожарной сигнализации, систем пожаротушения, видеонаблюдения и СКУД в Алматы. Расчёт стоимости онлайн." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ru_RU" />
-  <meta property="og:url" content="https://sgtech.kz" />
-  <meta property="og:image" content="https://sgtech.kz/og-image.jpg" />
-
+  <meta property="og:url" content="https://sgtech.kz/" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
-
-  <!-- Шрифт Onest: современный, с поддержкой кириллицы -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-
-  <!-- JSON-LD: бизнес-данные для Яндекса и Google -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "ТОО «Strategic Technology»",
-      "alternateName": "Strategic Technology",
-      "image": "https://sgtech.kz/logo.svg",
-      "url": "https://sgtech.kz",
-      "telephone": ["+77017154286", "+77017244212"],
-      "email": "info@sgtech.kz",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "ул. Жандосова, 55/5, 2 этаж, офис №2",
-        "addressLocality": "Алматы",
-        "addressRegion": "Ауэзовский район",
-        "postalCode": "050035",
-        "addressCountry": "KZ"
-      },
-      "foundingDate": "2019-09-23",
-      "taxID": "190940025867"
-    }
-  </script>
 </head>
-
 <body>
   <!-- ШАПКА -->
   <header class="site-header" id="site-header">
     <div class="container header-inner">
-      <a href="#top" class="logo" aria-label="Strategic Technology — на главную">
+      <a href="index.html" class="logo" aria-label="Strategic Technology — на главную">
         <img src="images/Logo_strategic.jpg" alt="Strategic Technology" class="logo-img" />
       </a>
 
       <nav class="main-nav" aria-label="Главное меню">
-        <a href="#services">Услуги</a>
-        <a href="#about">О компании</a>
-        <a href="#portfolio">Портфолио</a>
-        <a href="#contacts">Контакты</a>
+        <div class="nav-item">
+          <button class="nav-drop-btn" aria-haspopup="true">
+            Услуги <span class="caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown">
+            <a href="ops.html">Охранно-пожарная сигнализация</a>
+            <a href="tushenie.html">Системы пожаротушения</a>
+            <a href="video.html">Видеонаблюдение</a>
+            <a href="skud.html">СКУД — контроль доступа</a>
+          </div>
+        </div>
+        <a href="portfolio.html">Портфолио</a>
+        <a href="index.html#about">О компании</a>
+        <a href="contacts.html">Контакты</a>
       </nav>
 
       <div class="header-cta">
@@ -83,15 +47,10 @@
           <span class="phone-dot" aria-hidden="true"></span>
           +7 701 715 42 86
         </a>
-        <a href="#lead" class="btn btn-primary btn-sm">Заявка</a>
+        <a href="#quiz" class="btn btn-primary btn-sm">Заявка</a>
       </div>
 
-      <button
-        class="mobile-toggle"
-        id="mobile-toggle"
-        aria-label="Открыть меню"
-        aria-expanded="false"
-      >
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Открыть меню" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -117,28 +76,16 @@
             Один подрядчик на все этапы — от проекта до сервиса.
           </p>
           <div class="hero-actions">
-            <a href="#lead" class="btn btn-primary">Получить расчёт</a>
+            <a href="#quiz" class="btn btn-primary">Рассчитать стоимость</a>
             <a href="#services" class="btn btn-ghost">Что мы делаем</a>
           </div>
         </div>
 
         <aside class="hero-stats" aria-label="Цифры о компании">
-          <div class="stat">
-            <span class="stat-num">6+</span>
-            <span class="stat-label">лет на рынке</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">4</span>
-            <span class="stat-label">направления услуг</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">24/7</span>
-            <span class="stat-label">техподдержка</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">НДС</span>
-            <span class="stat-label">официально, с ЭСФ</span>
-          </div>
+          <div class="stat"><span class="stat-num">6+</span><span class="stat-label">лет на рынке</span></div>
+          <div class="stat"><span class="stat-num">4</span><span class="stat-label">направления услуг</span></div>
+          <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">техподдержка</span></div>
+          <div class="stat"><span class="stat-num">НДС</span><span class="stat-label">официально, с ЭСФ</span></div>
         </aside>
       </div>
     </section>
@@ -155,42 +102,126 @@
           <article class="service-card">
             <span class="service-num">01</span>
             <h3>Охранно-пожарная сигнализация</h3>
-            <p>
-              Проектирование, монтаж, пуско-наладка и сервисное обслуживание систем
-              ОПС для офисов, складов, производств и торговых объектов.
-            </p>
-            <a href="#lead" class="service-link">Заказать →</a>
+            <p>Проектирование, монтаж, пуско-наладка и сервисное обслуживание систем ОПС для офисов, складов, производств и торговых объектов.</p>
+            <a href="ops.html" class="service-link">Подробнее →</a>
           </article>
-
           <article class="service-card">
             <span class="service-num">02</span>
             <h3>Системы пожаротушения</h3>
-            <p>
-              Автоматические установки пожаротушения: водяные, порошковые,
-              газовые. Расчёт по нормам, монтаж, постановка на обслуживание.
-            </p>
-            <a href="#lead" class="service-link">Заказать →</a>
+            <p>Автоматические установки пожаротушения: водяные, порошковые, газовые. Расчёт по нормам, монтаж, постановка на обслуживание.</p>
+            <a href="tushenie.html" class="service-link">Подробнее →</a>
           </article>
-
           <article class="service-card">
             <span class="service-num">03</span>
             <h3>Видеонаблюдение</h3>
-            <p>
-              IP- и аналоговые системы видеонаблюдения с удалённым доступом,
-              видеоаналитикой и записью на серверы или в облако.
-            </p>
-            <a href="#lead" class="service-link">Заказать →</a>
+            <p>IP- и аналоговые системы видеонаблюдения с удалённым доступом, видеоаналитикой и записью на серверы или в облако.</p>
+            <a href="video.html" class="service-link">Подробнее →</a>
           </article>
-
           <article class="service-card">
             <span class="service-num">04</span>
             <h3>Системы контроля доступа</h3>
-            <p>
-              СКУД для офисов, складов и режимных объектов: карты, биометрия,
-              шлагбаумы, домофония, интеграция с учётом рабочего времени.
-            </p>
-            <a href="#lead" class="service-link">Заказать →</a>
+            <p>СКУД для офисов, складов и режимных объектов: карты, биометрия, шлагбаумы, домофония, интеграция с учётом рабочего времени.</p>
+            <a href="skud.html" class="service-link">Подробнее →</a>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- КВИЗ: расчёт стоимости -->
+    <section id="quiz" class="section quiz-section">
+      <div class="container quiz-inner">
+        <div class="quiz-intro">
+          <p class="eyebrow eyebrow--light"><span class="eyebrow-dash"></span>Калькулятор</p>
+          <h2>Ответьте на 6 вопросов — получите расчёт стоимости в WhatsApp</h2>
+          <p class="lede">
+            Подберём решение под ваш объект и пришлём коммерческое предложение
+            с конкретными моделями оборудования и ценами.
+          </p>
+          <ul class="quiz-perks">
+            <li>Расчёт в нескольких вариантах: бюджетный, стандарт, премиум</li>
+            <li>Точные модели оборудования — можно проверить рыночную цену</li>
+            <li>Без навязчивых звонков: отвечаем там, где удобно вам</li>
+          </ul>
+        </div>
+
+        <div class="quiz-card" id="quiz-card">
+          <div class="quiz-progress">
+            <div class="quiz-progress-bar"><div class="quiz-progress-fill"></div></div>
+            <span class="quiz-progress-label">1 / 6</span>
+          </div>
+
+          <div class="quiz-step is-active" data-question="Система">
+            <h3>Какая система вас интересует?</h3>
+            <div class="quiz-options">
+              <label class="quiz-option"><input type="radio" name="q1" value="Видеонаблюдение" /><span>Видеонаблюдение</span></label>
+              <label class="quiz-option"><input type="radio" name="q1" value="Охранно-пожарная сигнализация" /><span>Охранно-пожарная сигнализация</span></label>
+              <label class="quiz-option"><input type="radio" name="q1" value="Система пожаротушения" /><span>Система пожаротушения</span></label>
+              <label class="quiz-option"><input type="radio" name="q1" value="СКУД (контроль доступа)" /><span>СКУД — контроль доступа</span></label>
+              <label class="quiz-option"><input type="radio" name="q1" value="Комплекс из нескольких систем" /><span>Комплекс из нескольких систем</span></label>
+            </div>
+          </div>
+
+          <div class="quiz-step" data-question="Тип объекта">
+            <h3>Какой у вас объект?</h3>
+            <div class="quiz-options">
+              <label class="quiz-option"><input type="radio" name="q2" value="Офис" /><span>Офис</span></label>
+              <label class="quiz-option"><input type="radio" name="q2" value="Склад / производство" /><span>Склад или производство</span></label>
+              <label class="quiz-option"><input type="radio" name="q2" value="Магазин / ТЦ" /><span>Магазин или торговый центр</span></label>
+              <label class="quiz-option"><input type="radio" name="q2" value="Кафе / ресторан" /><span>Кафе, ресторан</span></label>
+              <label class="quiz-option"><input type="radio" name="q2" value="Частный дом / квартира" /><span>Частный дом или квартира</span></label>
+              <label class="quiz-option"><input type="radio" name="q2" value="Другое" /><span>Другое</span></label>
+            </div>
+          </div>
+
+          <div class="quiz-step" data-question="Площадь">
+            <h3>Площадь объекта?</h3>
+            <div class="quiz-options">
+              <label class="quiz-option"><input type="radio" name="q3" value="До 100 м²" /><span>До 100 м²</span></label>
+              <label class="quiz-option"><input type="radio" name="q3" value="100–500 м²" /><span>100–500 м²</span></label>
+              <label class="quiz-option"><input type="radio" name="q3" value="500–2000 м²" /><span>500–2000 м²</span></label>
+              <label class="quiz-option"><input type="radio" name="q3" value="Более 2000 м²" /><span>Более 2000 м²</span></label>
+              <label class="quiz-option"><input type="radio" name="q3" value="Затрудняюсь ответить" /><span>Затрудняюсь ответить</span></label>
+            </div>
+          </div>
+
+          <div class="quiz-step" data-question="Задача">
+            <h3>Что требуется сделать?</h3>
+            <div class="quiz-options">
+              <label class="quiz-option"><input type="radio" name="q4" value="Монтаж с нуля" /><span>Монтаж новой системы «с нуля»</span></label>
+              <label class="quiz-option"><input type="radio" name="q4" value="Модернизация существующей системы" /><span>Модернизация существующей системы</span></label>
+              <label class="quiz-option"><input type="radio" name="q4" value="Обслуживание" /><span>Сервисное обслуживание</span></label>
+              <label class="quiz-option"><input type="radio" name="q4" value="Проект и смета" /><span>Нужен проект и смета</span></label>
+            </div>
+          </div>
+
+          <div class="quiz-step" data-question="Сроки">
+            <h3>Когда планируете работы?</h3>
+            <div class="quiz-options">
+              <label class="quiz-option"><input type="radio" name="q5" value="В ближайшую неделю" /><span>В ближайшую неделю</span></label>
+              <label class="quiz-option"><input type="radio" name="q5" value="В течение месяца" /><span>В течение месяца</span></label>
+              <label class="quiz-option"><input type="radio" name="q5" value="Пока изучаю цены" /><span>Пока изучаю цены</span></label>
+            </div>
+          </div>
+
+          <div class="quiz-step quiz-final">
+            <h3>Куда отправить расчёт?</h3>
+            <div class="field">
+              <label for="quiz-name">Ваше имя</label>
+              <input type="text" id="quiz-name" name="quiz-name" autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="quiz-phone">Номер WhatsApp</label>
+              <input type="tel" id="quiz-phone" name="quiz-phone" placeholder="+7 ___ ___ __ __" autocomplete="tel" />
+            </div>
+            <p class="quiz-hint muted" style="display:none; font-size:0.8125rem;">
+              Укажите имя и полный номер телефона.
+            </p>
+          </div>
+
+          <div class="quiz-nav">
+            <button type="button" class="quiz-back" hidden>← Назад</button>
+            <button type="button" class="btn btn-primary quiz-next">Далее →</button>
+          </div>
         </div>
       </div>
     </section>
@@ -210,58 +241,184 @@
           </header>
 
           <ul class="features-list">
-            <li>
-              <h4>Опыт более 6 лет</h4>
-              <p>На рынке безопасности РК с сентября 2019 года.</p>
-            </li>
-            <li>
-              <h4>Полный цикл</h4>
-              <p>Проект → монтаж → пуско-наладка → сервис. Один подрядчик на все этапы.</p>
-            </li>
-            <li>
-              <h4>Сертифицированное оборудование</h4>
-              <p>Работаем с техникой, соответствующей техрегламентам Республики Казахстан.</p>
-            </li>
-            <li>
-              <h4>Плательщик НДС</h4>
-              <p>Работаем официально с юр. лицами, выдаём электронные счета-фактуры.</p>
-            </li>
+            <li><h4>Опыт более 6 лет</h4><p>На рынке безопасности РК с сентября 2019 года.</p></li>
+            <li><h4>Полный цикл</h4><p>Проект → монтаж → пуско-наладка → сервис. Один подрядчик на все этапы.</p></li>
+            <li><h4>Сертифицированное оборудование</h4><p>Работаем с техникой, соответствующей техрегламентам Республики Казахстан.</p></li>
+            <li><h4>Плательщик НДС</h4><p>Работаем официально с юр. лицами, выдаём электронные счета-фактуры.</p></li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- ПОРТФОЛИО -->
-    <section id="portfolio" class="section portfolio">
+    <!-- РЕШЕНИЯ -->
+    <section id="solutions" class="section">
       <div class="container">
         <header class="section-head">
-          <p class="eyebrow"><span class="eyebrow-dash"></span>Портфолио</p>
-          <h2>Реализованные объекты</h2>
-          <p class="section-sub">
-            Фотографии работ будут добавлены в ближайшее время.
-            Полный список реализованных объектов предоставляется по запросу.
-          </p>
+          <p class="eyebrow"><span class="eyebrow-dash"></span>Отраслевые решения</p>
+          <h2>Подберём систему под ваш объект</h2>
         </header>
 
-        <div class="portfolio-grid">
-          <div class="portfolio-item placeholder">
-            <span class="placeholder-tag">Скоро · Фото объекта</span>
+        <div style="text-align:center;">
+          <div class="solutions-tabs" role="tablist">
+            <button class="solutions-tab is-active" data-target="panel-business" role="tab">Для бизнеса</button>
+            <button class="solutions-tab" data-target="panel-home" role="tab">Для дома</button>
           </div>
-          <div class="portfolio-item placeholder">
-            <span class="placeholder-tag">Скоро · Фото объекта</span>
-          </div>
-          <div class="portfolio-item placeholder">
-            <span class="placeholder-tag">Скоро · Фото объекта</span>
-          </div>
-          <div class="portfolio-item placeholder">
-            <span class="placeholder-tag">Скоро · Фото объекта</span>
-          </div>
-          <div class="portfolio-item placeholder">
-            <span class="placeholder-tag">Скоро · Фото объекта</span>
-          </div>
-          <div class="portfolio-item placeholder">
-            <span class="placeholder-tag">Скоро · Фото объекта</span>
-          </div>
+        </div>
+
+        <div class="solutions-panel is-active" id="panel-business" role="tabpanel">
+          <a href="#quiz" class="solution-card">
+            <h3>Для офиса</h3>
+            <p>Контроль доступа сотрудников, видеонаблюдение за рабочими зонами, пожарная сигнализация по нормам РК.</p>
+            <span class="solution-more">Рассчитать стоимость →</span>
+          </a>
+          <a href="#quiz" class="solution-card">
+            <h3>Для склада</h3>
+            <p>Контроль зон погрузки и хранения, охранная сигнализация периметра, автоматическое пожаротушение.</p>
+            <span class="solution-more">Рассчитать стоимость →</span>
+          </a>
+          <a href="#quiz" class="solution-card">
+            <h3>Для магазина</h3>
+            <p>Видеоконтроль кассовой зоны и торгового зала, предотвращение краж, тревожная кнопка.</p>
+            <span class="solution-more">Рассчитать стоимость →</span>
+          </a>
+          <a href="#quiz" class="solution-card">
+            <h3>Для кафе и ресторана</h3>
+            <p>Контроль кассы и кухни, видеонаблюдение за залом, пожарная сигнализация для помещений с кухней.</p>
+            <span class="solution-more">Рассчитать стоимость →</span>
+          </a>
+          <a href="#quiz" class="solution-card">
+            <h3>Для производства</h3>
+            <p>Комплексные системы: ОПС, пожаротушение, СКУД с учётом рабочего времени, видеонаблюдение цехов.</p>
+            <span class="solution-more">Рассчитать стоимость →</span>
+          </a>
+          <a href="#quiz" class="solution-card">
+            <h3>Для БЦ и ТЦ</h3>
+            <p>Системы безопасности для зданий с массовым пребыванием людей: эвакуация, оповещение, контроль доступа.</p>
+            <span class="solution-more">Рассчитать стоимость →</span>
+          </a>
+        </div>
+
+        <div class="solutions-panel" id="panel-home" role="tabpanel">
+          <a href="#quiz" class="solution-card">
+            <h3>Для частного дома</h3>
+            <p>Видеонаблюдение по периметру с просмотром на телефоне, охранная сигнализация, домофония.</p>
+            <span class="solution-more">Рассчитать стоимость →</span>
+          </a>
+          <a href="#quiz" class="solution-card">
+            <h3>Для квартиры</h3>
+            <p>Камеры с удалённым доступом, датчики дыма и протечки, охранная сигнализация.</p>
+            <span class="solution-more">Рассчитать стоимость →</span>
+          </a>
+          <a href="#quiz" class="solution-card">
+            <h3>Для двора и паркинга</h3>
+            <p>Уличные камеры, шлагбаумы с распознаванием номеров, контроль въезда на территорию.</p>
+            <span class="solution-more">Рассчитать стоимость →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- КЛИЕНТЫ -->
+    <section class="section clients">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow"><span class="eyebrow-dash"></span>Нам доверяют</p>
+          <h2>Наши клиенты</h2>
+        </header>
+
+        <!--
+          ЗАМЕНИ ПЛЕЙСХОЛДЕРЫ НА РЕАЛЬНЫЕ ЛОГОТИПЫ:
+          <div class="client-logo"><img src="images/clients/client1.png" alt="Название компании" /></div>
+        -->
+        <div class="clients-grid">
+          <div class="client-logo"><span class="client-name">Логотип клиента</span></div>
+          <div class="client-logo"><span class="client-name">Логотип клиента</span></div>
+          <div class="client-logo"><span class="client-name">Логотип клиента</span></div>
+          <div class="client-logo"><span class="client-name">Логотип клиента</span></div>
+          <div class="client-logo"><span class="client-name">Логотип клиента</span></div>
+          <div class="client-logo"><span class="client-name">Логотип клиента</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ОТЗЫВЫ -->
+    <section id="reviews" class="section">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow"><span class="eyebrow-dash"></span>Отзывы</p>
+          <h2>Что говорят клиенты</h2>
+        </header>
+
+        <!--
+          ВАЖНО: замени тексты ниже на РЕАЛЬНЫЕ отзывы ваших клиентов
+          (например, из 2ГИС или Google Maps). Публиковать выдуманные
+          отзывы нельзя — это подрывает доверие и нарушает правила площадок.
+        -->
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 из 5">★★★★★</div>
+            <blockquote>[Сюда вставьте текст реального отзыва клиента №1 — скопируйте из 2ГИС или попросите клиента написать пару предложений о работе с вами.]</blockquote>
+            <div class="review-author">
+              <div class="review-avatar">А</div>
+              <div><div class="name">Имя клиента</div><div class="meta">Тип объекта, год</div></div>
+            </div>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 из 5">★★★★★</div>
+            <blockquote>[Текст реального отзыва клиента №2.]</blockquote>
+            <div class="review-author">
+              <div class="review-avatar">Б</div>
+              <div><div class="name">Имя клиента</div><div class="meta">Тип объекта, год</div></div>
+            </div>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 из 5">★★★★★</div>
+            <blockquote>[Текст реального отзыва клиента №3.]</blockquote>
+            <div class="review-author">
+              <div class="review-avatar">В</div>
+              <div><div class="name">Имя клиента</div><div class="meta">Тип объекта, год</div></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="reviews-cta">
+          <!-- Замени # на ссылку на вашу карточку компании в 2ГИС -->
+          <a href="#" class="btn btn-ghost" target="_blank" rel="noopener">Все отзывы в 2ГИС</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПРОБЛЕМЫ ПРИ ВЫБОРЕ ПОДРЯДЧИКА -->
+    <section class="section problems">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow"><span class="eyebrow-dash"></span>Почему важен выбор подрядчика</p>
+          <h2>4 типичные проблемы на рынке систем безопасности</h2>
+        </header>
+
+        <div class="problems-grid">
+          <article class="problem-card">
+            <h3>Компании-«однодневки»</h3>
+            <p>Пропадают после сдачи объекта: не дают гарантию, не отвечают на звонки, нет техподдержки. Систему потом некому обслуживать.</p>
+          </article>
+          <article class="problem-card">
+            <h3>Сомнительное оборудование</h3>
+            <p>Техника «с барахолки», б/у или после ремонта. Не соответствует заявленным характеристикам и техрегламентам РК.</p>
+          </article>
+          <article class="problem-card">
+            <h3>Чужой доступ к вашим камерам</h3>
+            <p>Недобросовестные установщики могут оставить себе доступ к видеонаблюдению и наблюдать за вашим объектом без вашего ведома.</p>
+          </article>
+          <article class="problem-card">
+            <h3>«Непрозрачные» сметы</h3>
+            <p>Без точных моделей оборудования невозможно проверить рыночную стоимость. Раздутые сметы с лишними материалами.</p>
+          </article>
+        </div>
+
+        <div class="problems-answer">
+          <strong>Как работаем мы:</strong> официальный договор от ТОО с гарантией,
+          прозрачная смета с конкретными моделями оборудования, передача всех
+          паролей и доступов заказчику после сдачи объекта, сервисное обслуживание после монтажа.
         </div>
       </div>
     </section>
@@ -276,7 +433,6 @@
             Опишите задачу — рассчитаем стоимость и предложим решение под ваш объект.
             Без навязчивых обзвонов.
           </p>
-
           <div class="lead-direct">
             <p class="direct-title">Или свяжитесь напрямую:</p>
             <a href="tel:+77017154286" class="direct-line">+7 701 715 42 86</a>
@@ -285,28 +441,15 @@
         </div>
 
         <!-- Подключение к Formspree: замени YOUR_FORM_ID на свой -->
-        <form
-          action="https://formspree.io/f/YOUR_FORM_ID"
-          method="POST"
-          class="lead-form"
-        >
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="lead-form">
           <div class="field">
             <label for="name">Имя</label>
             <input type="text" id="name" name="name" required autocomplete="name" />
           </div>
-
           <div class="field">
             <label for="phone">Телефон</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="+7 ___ ___ __ __"
-              required
-              autocomplete="tel"
-            />
+            <input type="tel" id="phone" name="phone" placeholder="+7 ___ ___ __ __" required autocomplete="tel" />
           </div>
-
           <div class="field">
             <label for="service">Какая услуга интересует</label>
             <select id="service" name="service">
@@ -318,20 +461,14 @@
               <option>Пока не уверен(а)</option>
             </select>
           </div>
-
           <div class="field">
             <label for="message">Опишите задачу (необязательно)</label>
             <textarea id="message" name="message" rows="3"></textarea>
           </div>
-
           <label class="consent">
             <input type="checkbox" name="consent" required />
-            <span>
-              Я согласен(на) с
-              <a href="privacy.html" target="_blank">политикой обработки персональных данных</a>
-            </span>
+            <span>Я согласен(на) с <a href="privacy.html" target="_blank">политикой обработки персональных данных</a></span>
           </label>
-
           <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
         </form>
       </div>
@@ -348,40 +485,25 @@
         <div class="contacts-grid">
           <div class="contact-card">
             <h3>Офис</h3>
-            <p>
-              г. Алматы, Ауэзовский район<br />
-              ул. Жандосова, 55/5<br />
-              2 этаж, офис №2<br />
-              <span class="muted">Индекс: 050035</span>
-            </p>
+            <p>г. Алматы, Ауэзовский район<br />ул. Жандосова, 55/5<br />2 этаж, офис №2<br /><span class="muted">Индекс: 050035</span></p>
           </div>
-
           <div class="contact-card">
             <h3>Телефоны</h3>
-            <p>
-              <a href="tel:+77017154286">+7 701 715 42 86</a><br />
-            </p>
+            <p><a href="tel:+77017154286">+7 701 715 42 86</a></p>
           </div>
-
           <div class="contact-card">
             <h3>Электронная почта</h3>
             <p><a href="mailto:info@sgtech.kz">info@sgtech.kz</a></p>
             <p class="muted">Отвечаем в рабочие часы</p>
           </div>
-
           <div class="contact-card">
             <h3>Реквизиты</h3>
-            <p>
-              ТОО «Strategic Technology»<br />
-              БИН 190940025867<br />
-              Плательщик НДС
-            </p>
+            <p>ТОО «Strategic Technology»<br />БИН 190940025867<br />Плательщик НДС</p>
           </div>
         </div>
       </div>
     </section>
   </main>
-
   <!-- ФУТЕР -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -393,19 +515,19 @@
       <div class="footer-col">
         <h4>Услуги</h4>
         <ul>
-          <li><a href="#services">Охранно-пожарная сигнализация</a></li>
-          <li><a href="#services">Системы пожаротушения</a></li>
-          <li><a href="#services">Видеонаблюдение</a></li>
-          <li><a href="#services">СКУД</a></li>
+          <li><a href="ops.html">Охранно-пожарная сигнализация</a></li>
+          <li><a href="tushenie.html">Системы пожаротушения</a></li>
+          <li><a href="video.html">Видеонаблюдение</a></li>
+          <li><a href="skud.html">СКУД</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
         <h4>Компания</h4>
         <ul>
-          <li><a href="#about">О компании</a></li>
-          <li><a href="#portfolio">Портфолио</a></li>
-          <li><a href="#contacts">Контакты</a></li>
+          <li><a href="index.html#about">О компании</a></li>
+          <li><a href="portfolio.html">Портфолио</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
           <li><a href="privacy.html">Политика конфиденциальности</a></li>
         </ul>
       </div>
@@ -424,20 +546,15 @@
 
     <div class="footer-bottom">
       <div class="container">
-        <p>© 2026 ТОО «Strategic Technology». Все права защищены.</p>
+        <p>© <span data-year>2026</span> ТОО «Strategic Technology». Все права защищены.</p>
         <p class="footer-site"><a href="https://sgtech.kz">sgtech.kz</a></p>
       </div>
     </div>
   </footer>
 
   <!-- Плавающая кнопка WhatsApp -->
-  <a
-    href="https://wa.me/77017154286?text=Здравствуйте!%20Хочу%20получить%20консультацию%20по%20услугам%20Strategic%20Technology."
-    class="whatsapp-float"
-    aria-label="Написать в WhatsApp"
-    target="_blank"
-    rel="noopener"
-  >
+  <a href="https://wa.me/77017154286?text=Здравствуйте!%20Пишу%20с%20сайта%20sgtech.kz.%20Хочу%20получить%20консультацию."
+     class="whatsapp-float" aria-label="Написать в WhatsApp" target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
       <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
     </svg>

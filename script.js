@@ -195,4 +195,147 @@
      --------------------------------------------------------- */
   const yearEl = document.querySelector("[data-year]");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---------------------------------------------------------
+     7. Дропдаун «Услуги» в шапке (для мобильных — по тапу)
+     --------------------------------------------------------- */
+  document.querySelectorAll(".nav-item").forEach((item) => {
+    const btn = item.querySelector(".nav-drop-btn");
+    if (!btn) return;
+
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      item.classList.toggle("is-open");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!item.contains(e.target)) item.classList.remove("is-open");
+    });
+  });
+
+  /* ---------------------------------------------------------
+     8. Табы «Решения»: Для бизнеса / Для дома
+     --------------------------------------------------------- */
+  const tabButtons = document.querySelectorAll(".solutions-tab");
+  const tabPanels = document.querySelectorAll(".solutions-panel");
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      tabButtons.forEach((b) => b.classList.remove("is-active"));
+      tabPanels.forEach((p) => p.classList.remove("is-active"));
+      btn.classList.add("is-active");
+      const panel = document.getElementById(btn.dataset.target);
+      if (panel) panel.classList.add("is-active");
+    });
+  });
+
+  /* ---------------------------------------------------------
+     9. Квиз: 6 шагов → расчёт в WhatsApp
+     --------------------------------------------------------- */
+  const quiz = document.getElementById("quiz");
+
+  if (quiz) {
+    const steps = Array.from(quiz.querySelectorAll(".quiz-step"));
+    const backBtn = quiz.querySelector(".quiz-back");
+    const nextBtn = quiz.querySelector(".quiz-next");
+    const fill = quiz.querySelector(".quiz-progress-fill");
+    const label = quiz.querySelector(".quiz-progress-label");
+    const WA_NUMBER = "77017154286"; // номер WhatsApp компании
+
+    let current = 0;
+
+    const render = () => {
+      steps.forEach((s, i) => s.classList.toggle("is-active", i === current));
+      backBtn.hidden = current === 0;
+      const isLast = current === steps.length - 1;
+      nextBtn.textContent = isLast ? "Получить расчёт в WhatsApp" : "Далее →";
+      nextBtn.classList.toggle("btn-wa", isLast);
+      fill.style.width = ((current + 1) / steps.length) * 100 + "%";
+      label.textContent = (current + 1) + " / " + steps.length;
+    };
+
+    const stepValid = () => {
+      const step = steps[current];
+      const radios = step.querySelectorAll('input[type="radio"]');
+      if (radios.length) {
+        return Array.from(radios).some((r) => r.checked);
+      }
+      // Финальный шаг: имя + телефон
+      const name = step.querySelector('input[name="quiz-name"]');
+      const phone = step.querySelector('input[name="quiz-phone"]');
+      if (name && phone) {
+        const digits = phone.value.replace(/\D/g, "");
+        return name.value.trim().length >= 2 && digits.length === 11;
+      }
+      return true;
+    };
+
+    const collectAnswers = () => {
+      const lines = [];
+      steps.forEach((step) => {
+        const q = step.dataset.question;
+        const checked = step.querySelector('input[type="radio"]:checked');
+        if (q && checked) lines.push(q + ": " + checked.value);
+      });
+      const name = quiz.querySelector('input[name="quiz-name"]');
+      const phone = quiz.querySelector('input[name="quiz-phone"]');
+      return (
+        "Здравствуйте! Хочу получить расчёт стоимости.\n\n" +
+        lines.join("\n") +
+        "\n\nИмя: " + name.value.trim() +
+        "\nТелефон: " + phone.value.trim()
+      );
+    };
+
+    nextBtn.addEventListener("click", () => {
+      if (!stepValid()) {
+        const step = steps[current];
+        step.style.animation = "none";
+        // Лёгкая встряска как подсказка
+        requestAnimationFrame(() => {
+          step.style.animation = "";
+        });
+        const hint = step.querySelector(".quiz-hint");
+        if (hint) hint.style.display = "block";
+        return;
+      }
+
+      if (current < steps.length - 1) {
+        current += 1;
+        render();
+      } else {
+        // Финал: открываем WhatsApp с заполненной анкетой
+        const text = encodeURIComponent(collectAnswers());
+        window.open(
+          "https://wa.me/" + WA_NUMBER + "?text=" + text,
+          "_blank",
+          "noopener"
+        );
+      }
+    });
+
+    backBtn.addEventListener("click", () => {
+      if (current > 0) {
+        current -= 1;
+        render();
+      }
+    });
+
+    // Авто-переход по клику на вариант (как в квизах на Tilda)
+    steps.forEach((step, i) => {
+      step.querySelectorAll('input[type="radio"]').forEach((radio) => {
+        radio.addEventListener("change", () => {
+          if (i === current && current < steps.length - 1) {
+            setTimeout(() => {
+              current += 1;
+              render();
+            }, 250);
+          }
+        });
+      });
+    });
+
+    render();
+  }
+
 })();
