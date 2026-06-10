@@ -1967,3 +1967,37 @@ p {
     padding: 32px 24px;
   }
 }
+
+/* ---------- Текстовые страницы (политика и т.п.) ---------- */
+.prose {
+  max-width: 760px;
+}
+
+.prose h2 {
+  font-size: 1.375rem;
+  margin: 44px 0 14px;
+}
+
+.prose h2:first-of-type {
+  margin-top: 0;
+}
+
+.prose p,
+.prose li {
+  color: var(--ink-2);
+  font-size: 0.96rem;
+}
+
+.prose ul {
+  margin: 0 0 1em;
+  padding-left: 22px;
+}
+
+.prose li {
+  margin-bottom: 6px;
+}
+
+.legal-updated {
+  font-size: 0.85rem;
+  color: var(--ink-4);
+}

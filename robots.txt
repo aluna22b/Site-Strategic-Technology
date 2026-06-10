@@ -1,0 +1,11 @@
+# robots.txt для sgtech.kz
+# Разрешаем индексацию всего сайта всем поисковым роботам
+
+User-agent: *
+Allow: /
+
+# Страницу политики индексировать не нужно (на ней стоит noindex)
+Disallow: /privacy.html
+
+# Указываем поисковикам, где лежит карта сайта
+Sitemap: https://sgtech.kz/sitemap.xml
